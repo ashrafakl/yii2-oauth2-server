@@ -140,18 +140,18 @@ class Module extends \yii\base\Module
     
     public function getRequest()
     {
-        if(!$this->has('request')) {
-            $this->set('request', Request::createFromGlobals());
+        if(!$this->has('oauth2Request')) {
+            $this->set('oauth2Request', Request::createFromGlobals());
         }
-        return $this->get('request');
+        return $this->get('oauth2Request');
     }
     
     public function getResponse()
     {
-        if(!$this->has('response')) {
-            $this->set('response', new Response());
+        if(!$this->has('oauth2Response')) {
+            $this->set('oauth2Response', new Response());
         }
-        return $this->get('response');
+        return $this->get('oauth2Response');
     }
 
     /**
